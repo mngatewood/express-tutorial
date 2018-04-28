@@ -33,3 +33,7 @@ app.get('/user', (request, response) => {
 app.get('/sunset', (request, response) => {
   response.sendFile('public/sunset.jpg', { root: __dirname })
 })
+
+app.use((request, response) => {
+  response.status(404).send("Sorry can't find that!")
+})
